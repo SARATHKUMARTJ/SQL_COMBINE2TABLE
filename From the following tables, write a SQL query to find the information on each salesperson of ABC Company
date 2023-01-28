@@ -1,0 +1,10 @@
+CREATE TABLE  Salespersons ( salesperson_id int,first_name Varchar(255),last_name Varchar(255));
+CREATE TABLE  Address (address_id int, salesperson_id  int, city varchar(255), state varchar(255), country varchar(255));
+INSERT INTO Salespersons ( salesperson_id, first_name, last_name)VALUES (1, 'Green', 'Wright'),('2', 'Jones', 'Collins'),('3', 'Bryant', 'Davis');
+INSERT INTO Address (address_id, salesperson_id, city, state, country) VALUES ('1', '2', 'Los Angeles','California', 'USA'),('2', '3', 'Denver', 'Colorado','USA'),('3', '4', 'Atlanta', 'Georgia','USA');
+select * from Address;
+select * from Salespersons;
+SELECT first_name, last_name, city, state 
+FROM Salespersons
+LEFT JOIN Address
+ON Salespersons.salesperson_id = Address.salesperson_id;
